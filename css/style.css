@@ -296,14 +296,15 @@ address {
   transform: scale(0);
 }
 
-.modal {
+.modal-form {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 528px;
-  height: 581px;
+  min-width: 528px;
+  min-height: 581px;
+  padding: 40px 39px 40px 41px;
 
   background-color: var(--white);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -333,6 +334,80 @@ address {
 .modal-close-btn:focus .modal-close-img {
   fill: var(--accent);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--secondary-text);
+  margin: 0 0 12px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 12px;
+  line-height: 1.166;
+  letter-spacing: 0.01em;
+}
+
+.input-box {
+  position: relative;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 12px 12px 12px 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
+  background-color: rgb(235, 221, 221);
+}
+
+.icon-form {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  fill: var(--secondary-text);
+}
+
+.form-input:focus + .icon-form {
+  fill: var(--accent);
+}
+
+.form-textarea {
+  resize: none;
+  width: 100%;
+  padding: 12px 16px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.form-textarea:focus {
+  border-color: var(--accent);
+  background-color: rgb(235, 221, 221);
+}
+
+.form-field.textarea {
+  margin-bottom: 20px;
+}
+
+.form-textarea::placeholder {
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
 }
 
 /* Особенности */
