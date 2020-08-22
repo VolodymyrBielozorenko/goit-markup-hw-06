@@ -38,6 +38,17 @@ font-family: "Raleway", sans-serif; */
   /* outline: solid blue; */
 }
 
+.visualy-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
@@ -367,11 +378,12 @@ address {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: transparent;
 }
 
 .form-input:focus {
   border-color: var(--accent);
-  background-color: rgb(235, 221, 221);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-form {
@@ -383,6 +395,7 @@ address {
 
 .form-input:focus + .icon-form {
   fill: var(--accent);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-textarea {
@@ -393,11 +406,12 @@ address {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  outline: transparent;
 }
 
 .form-textarea:focus {
   border-color: var(--accent);
-  background-color: rgb(235, 221, 221);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field.textarea {
@@ -406,8 +420,51 @@ address {
 
 .form-textarea::placeholder {
   letter-spacing: 0.01em;
-
   color: rgba(117, 117, 117, 0.5);
+}
+
+.form-field.form-field-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.icon-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+
+  border: 2px solid var(--secondary-text);
+  border-radius: 4px;
+}
+
+.form-checkbox:checked + .icon-checkbox {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  background-image: url(../images/modal-form/icon-form-checked.svg);
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.agreement-conditions-link {
+  color: var(--accent);
+}
+
+.submit-btn {
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 10px 55px 10px 56px;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #188ce8;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Особенности */
